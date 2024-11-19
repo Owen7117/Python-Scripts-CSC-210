@@ -1,0 +1,54 @@
+﻿/Owen O'Neil
+/program 2 Part 2: Fibonaccie sequence
+/9/17/24
+
+input
+store n /store input 
+subt two / take away 2 becuase of the starting incase the user asks for place 0,1,2
+store n
+
+skipcond 000 / while n is less 0 skip next line 
+jump checkcount / jump to check count if it is 0 or greater meaning input was 2 which will output 1
+add one / add 1 to n 
+store n
+skipcond 000 / while n is less than 0 skip next line 
+jump checkcount/ jump to check count meaning input was 1
+add one / add 1 to n 
+output / this means the input was 0 so the ouput will also be zero 
+halt / stop the program
+           
+/ check n value subroutine     
+checkcount,		load n 
+				Skipcond 800 / while n is greater than 0 skip next line
+				jump outputnextnum / nextnum output will start off as 1 but get bigger each run
+				subt one / n-1
+                store n
+                load num1
+                subt num1 / num1 = 0
+                add num2 / add num2's value 
+                store num1 / make num1 = num2 so it takes the next folowing numbers place 
+                load num2
+                subt num2 / num2 = 0
+                add nextnum / add nextnum's value 
+                store num2/ make num2 = nextnum so it takes the next numbers place
+                load nextnum
+                subt nextnum / make nextnum 0 
+                add num1 
+                add num2
+   				store nextnum / add num1 and num2 together to find the next number and store the total
+                jump checkcount /repeat the loop until n is 0
+                
+/output subroutine
+outputnextnum, 	load nextnum / will either be 1 or the final number
+				output / display the number 
+                halt / stop the program 
+
+
+n, dec 0 
+/ set the first 3 indexes of the sequence
+num1, dec 0 
+num2, dec 1
+nextnum, dec 1 
+/ set one and two for addition and subtraction purposes 
+one, dec 1
+two, dec 2

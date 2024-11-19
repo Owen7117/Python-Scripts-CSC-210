@@ -1,0 +1,53 @@
+﻿/Owen O'Neil
+/program 2 Part 1: Factorial
+/9/17/24
+
+
+input / get input
+store b / input will be the same for b and c 
+store c 
+
+
+checkc,			load c
+				skipcond 800 / while c is greater than 0 skip next line 
+                jump checkb / if its 0 then go to check b subroutine 
+                jump doaddition / go to addition subroutine
+
+doaddition,		load a
+                add d / starts off as 1 but becomes the new total 
+                store a / stores temporary total 
+                load c 
+                subt one
+                store c / subtract one from c
+                jump checkc / check c again 
+
+                
+checkb,			load d
+				subt d
+                store d /set d equal to zero 
+                add a
+                store d / then add a so they are the same  
+                load a 
+                subt a 
+                store a / set a equal to zero
+                load b 
+                subt one 
+                store b / subtract one from b 
+				skipcond 800 / while b > 0 skip next line  
+				jump outputtotal / output the total (d)
+                load c
+                subt c
+                store c / set c equal to zero 
+                add b
+                store c / then set it equal to b by adding b 
+               	jump checkc / jump to check c again
+
+outputtotal,	load d / gets d
+                output / displays d
+                halt / stops program 
+
+a, dec 0 / set a, b, c equal to zero
+b, dec 0
+c, dec 0 
+d, dec 1 / starts off as 1
+one, dec 1 / always 1 
